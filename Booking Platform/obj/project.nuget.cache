@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AODM6V9uouM7gAp2iGseS2PdJL0drJYYjDN031BmR/XqKBvrMOipRnpfePTd4jSNG49KAFrSY7Op7dfKKLTXew==",
+  "dgSpecHash": "G33zbIAWZJ8eMGSaexpFKp/odEhpZDm7gg7cpD1E6ObwgYaI0qo8cD6gzBzjDF8ExRo9AovQyOWnYSa7g36izQ==",
   "success": true,
-  "projectFilePath": "/Users/mj/Projects/Booking Platform/Booking Platform/Booking Platform.csproj",
+  "projectFilePath": "/Users/mj/dev/booking-app/Booking Platform/Booking Platform.csproj",
   "expectedPackageFiles": [
     "/Users/mj/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/mj/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

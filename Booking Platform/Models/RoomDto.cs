@@ -13,9 +13,8 @@ namespace Booking_Platform.Models
         public int Capacity { get; set; }
 
 
-        public RoomDto(int id, string title, string imageUrl, decimal price, string description, string address, int capacity)
+        public RoomDto(string title, string imageUrl, decimal price, string description, string address, int capacity)
         {
-            Id = id;
             Title = title;
             ImageUrl = imageUrl;
             Price = price;

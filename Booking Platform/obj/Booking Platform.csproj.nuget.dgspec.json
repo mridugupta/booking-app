@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mj/Projects/Booking Platform/Booking Platform/Booking Platform.csproj": {}
+    "/Users/mj/dev/booking-app/Booking Platform/Booking Platform.csproj": {}
   },
   "projects": {
-    "/Users/mj/Projects/Booking Platform/Booking Platform/Booking Platform.csproj": {
+    "/Users/mj/dev/booking-app/Booking Platform/Booking Platform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mj/Projects/Booking Platform/Booking Platform/Booking Platform.csproj",
+        "projectUniqueName": "/Users/mj/dev/booking-app/Booking Platform/Booking Platform.csproj",
         "projectName": "Booking Platform",
-        "projectPath": "/Users/mj/Projects/Booking Platform/Booking Platform/Booking Platform.csproj",
+        "projectPath": "/Users/mj/dev/booking-app/Booking Platform/Booking Platform.csproj",
         "packagesPath": "/Users/mj/.nuget/packages/",
-        "outputPath": "/Users/mj/Projects/Booking Platform/Booking Platform/obj/",
+        "outputPath": "/Users/mj/dev/booking-app/Booking Platform/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mj/.nuget/NuGet/NuGet.Config"

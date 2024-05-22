@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Booking_Platform_Tests
-build_property.ProjectDir = /Users/mj/Projects/Booking Platform/Booking Platform Tests/
+build_property.ProjectDir = /Users/mj/dev/booking-app/Booking Platform Tests/

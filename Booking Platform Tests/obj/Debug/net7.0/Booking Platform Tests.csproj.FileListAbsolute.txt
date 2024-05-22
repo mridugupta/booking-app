@@ -4,3 +4,9 @@
 /Users/mj/Projects/Booking Platform/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfoInputs.cache
 /Users/mj/Projects/Booking Platform/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfo.cs
 /Users/mj/Projects/Booking Platform/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CoreCompileInputs.cache
+/Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.AssemblyReference.cache
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfoInputs.cache
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfo.cs
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CoreCompileInputs.cache

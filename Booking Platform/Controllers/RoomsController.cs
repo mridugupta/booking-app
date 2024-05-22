@@ -18,15 +18,15 @@ namespace Booking_Platform.Controllers
             _context = context;
         }
 
-        public IActionResult Rooms()
+        /*public IActionResult Rooms()
         {
             var rooms = GetAvailableRooms();
             return View(rooms.ToList());
-        }
+        }*/
 
-        public IEnumerable<RoomDto> GetAvailableRooms()
+        /*public IEnumerable<RoomDto> GetAvailableRooms()
         {
-            var room1 = new RoomDto(1, "Room-1", "/images/room-1.jpg", 202.22m, "description for room-1", "room-1 address", 2);
+            var room1 = new RoomDto("Room-1", "/images/room-1.jpg", 202.22m, "description for room-1", "room-1 address", 2);
             var room2 = new RoomDto(2, "Room-2", "/images/room-2.jpg", 442.44m, "description for room-2", "room-2 address", 4);
 
             IEnumerable<RoomDto> availableRooms = new RoomDto[] {
@@ -47,7 +47,7 @@ namespace Booking_Platform.Controllers
             //.Select(x => new RoomDto(r.title, r.image, r.price, r.description, r.address, r.capacity))
             //.ToArray();
             //return rooms;
-        }
+        }*/
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RoomDto>>> GetRooms()
