@@ -19,14 +19,14 @@ namespace Booking_Platform.Controllers
         [HttpPost]
         public async Task<ActionResult<BookingDto>> PostBooking(BookingDto booking)
         {
-            var room = await _context.Rooms.FindAsync(booking.RoomId);
+            var room = await _context.Rooms.FindAsync(booking.Room.Id);
             if (room == null || room.Capacity < booking.NumberOfPeople)
             {
                 return BadRequest("Invalid booking request.");
             }
 
             var overlappingBookings = await _context.Bookings
-                .Where(b => b.RoomId == booking.RoomId &&
+                .Where(b => b.Room.Id == booking.Room.Id &&
                             b.EndDate >= booking.StartDate &&
                             b.StartDate <= booking.EndDate)
                 .ToListAsync();
@@ -45,7 +45,7 @@ namespace Booking_Platform.Controllers
         [HttpGet("{roomId}")]
         public async Task<ActionResult<IList<BookingDto>>> GetBookingByRoomId(int roomId)
         {
-            return await _context.Bookings.Where(r => r.RoomId == roomId).ToListAsync();
+            return await _context.Bookings.Where(r => r.Room.Id == roomId).ToListAsync();
         }
 
         [HttpGet]

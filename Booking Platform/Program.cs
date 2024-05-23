@@ -25,7 +25,7 @@ void SeedData(IServiceProvider serviceProvider)
         room1, room2, room3, room4);
 
         context.Bookings.AddRange(
-        new BookingDto(room1.Id,"abc@gmail.com", DateTime.Today, DateTime.Today.AddDays(2), 2, room1));
+        new BookingDto("abc@gmail.com", DateTime.Today, DateTime.Today.AddDays(2), 2, room2));
         
         context.SaveChanges();
     }
