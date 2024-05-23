@@ -1,0 +1,24 @@
+﻿@model List<Booking_Platform.Models.RoomDto>
+
+<div class="text-center">
+    <h4 class="title">Available Rooms</h4>
+</div>
+
+<div class="container">
+    <div class="gallery">
+        @if (Model != null)
+        {
+            @foreach (var room in Model)
+            {
+                <div class="gallery-item">
+                    <img src="@room.ImageUrl" alt="@room.Title" />
+                    <p />
+                    <h5>@room.Title</h5>
+                    <p><b>@room.Description</b></p>
+                    <p>Price : <b>@room.Price</b> per night</p>
+                    <p>Capacity : <b>@room.Capacity</b> people</p>
+                </div>
+            }
+        }
+    </div>
+</div>

@@ -3,72 +3,10 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-6 title">Available Rooms</h1>
+<div class="container">
+    @await Html.PartialAsync("_Gallery", Model.Item1)
 </div>
 
 <div class="container">
-    <div class="gallery">
-        @if (Model.Item1 != null)
-        {
-            @foreach (var room in Model.Item1)
-            {
-                <div class="gallery-item">
-                    <img src=@room.ImageUrl alt="@room.Title" />
-                    <p />
-                    <h5>@room.Title</h5>
-                    <p><b>@room.Description</b></p>
-                    <p>Price : <b>@room.Price</b> per night</p>
-                    <p>Capacity : <b>@room.Capacity</b> people</p>
-
-                    @if (Model.Item2 != null)
-                    {
-                        @foreach (var booking in Model.Item2.Where(r => r.Room.Id == @room.Id))
-                        {
-                            <p>
-                                Bookings :
-                                @booking.StartDate - @booking.EndDate by @booking.Email
-                            </p>
-
-                        }
-                    }
-
-
-                </div>
-            }
-        }
-
-    </div>
-</div>
-
-<div class="container">
-    <form asp-action="Book" method="post">
-        <div class="form-row align-items-center d-flex">
-            <div class="col-auto margin-10px">
-                <label class="sr-only" for="roomId">Select Room*</label>
-                <select class="form-control mb-2" id="roomId" name="roomId" required>
-                    <option value="">Select a room</option>
-                    @foreach (var room in Model.Item1)
-                    {
-                        <option value="@room.Id">@room.Title - @room.Price per night</option>
-                    }
-                </select>
-            </div>
-            <div class="col-auto margin-10px">
-                <label class="sr-only" for="email">Email*</label>
-                <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Email" required />
-            </div>
-            <div class="col-auto margin-10px">
-                <label class="sr-only" for="startDate">Start Date*</label>
-                <input type="date" class="form-control mb-2" id="startDate" name="startDate" required />
-            </div>
-            <div class="col-auto margin-10px">
-                <label class="sr-only" for="endDate">End Date*</label>
-                <input type="date" class="form-control mb-2" id="endDate" name="endDate" required />
-            </div>
-            <div class="col-auto margin-10px margin-top-25px">
-                <button type="submit" class="btn btn-primary mb-2">Book</button>
-            </div>
-        </div>
-    </form>
+    @await Html.PartialAsync("_BookingForm", Model.Item1)
 </div>

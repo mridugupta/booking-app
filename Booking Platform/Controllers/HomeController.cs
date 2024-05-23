@@ -15,14 +15,6 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public async Task<IActionResult> IndexWorking()
-    {
-        var rooms = _context.Rooms.ToList();
-        var bookings = _context.Bookings.ToList();
-        var model = new Tuple<List<RoomDto>, List<BookingDto>>(rooms, bookings);
-        return View(model);
-    }
-
     public async Task<IActionResult> Index()
     {
 
