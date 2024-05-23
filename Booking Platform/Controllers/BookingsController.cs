@@ -17,6 +17,7 @@ namespace Booking_Platform.Controllers
         }
 
         [HttpPost("AddBooking")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddBooking([FromForm] int roomId, [FromForm] string email,
             [FromForm] DateTime startDate, [FromForm] DateTime endDate, [FromForm] int numberOfPeople)
         {
