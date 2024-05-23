@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.InMemory;
-using Booking_Platform.Models;
+﻿using Booking_Platform.Models;
 using Booking_Platform.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,19 +10,25 @@ void SeedData(IServiceProvider serviceProvider)
 
     if (!context.Rooms.Any())
     {
-    var room1 = new RoomDto("Room-1", "/images/room-1.jpg", 202.22m, "description for room-1", "123 Main St", 2);
-    var room2 = new RoomDto("Room-2", "/images/room-2.jpg", 355.45m, "description for room-2", "789 Oak St", 5);
-    room1.Id = 1;
-    room2.Id = 2;
 
-    context.Rooms.AddRange(
-        room1, room2);
+        var room1 = new RoomDto("Room-1", "/images/room-1.jpeg", 202.22m, "Comfortable Stay", "123 Main St", 2);
+        var room2 = new RoomDto("Room-2", "/images/room-2.jpeg", 355.45m, "Cozy Retreat", "789 Oak St", 5);
+        var room3 = new RoomDto("Room-3", "/images/room-3.jpeg", 402.22m, "Luxury Suite", "101 Maple Ave", 7);
+        var room4 = new RoomDto("Room-4", "/images/room-4.jpeg", 300.57m, "Elegant Haven", "202 Pine Rd", 4);
+
+        room1.Id = 1;
+        room2.Id = 2;
+        room3.Id = 3;
+        room4.Id = 4;
+
+        context.Rooms.AddRange(
+        room1, room2, room3, room4);
+
+        context.Bookings.AddRange(
+        new BookingDto(room1.Id,"abc@gmail.com", DateTime.Today, DateTime.Today.AddDays(2), 2, room1));
+        
         context.SaveChanges();
     }
-
-
-    //context.Bookings.AddRange(
-    //new BookingDto(room1.Id,"abc@gmail.com", DateTime.Today, DateTime.Today.AddDays(2), 2, room1));
 
 }
 

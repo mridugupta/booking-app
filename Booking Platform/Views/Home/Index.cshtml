@@ -1,41 +1,36 @@
-﻿@model List<Booking_Platform.Models.RoomDto>
+﻿@model Tuple<List<Booking_Platform.Models.RoomDto>, List<Booking_Platform.Models.BookingDto>>
 @{
     ViewData["Title"] = "Home";
 }
-<style>
-    .gallery {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .gallery-item {
-        margin: 10px;
-        border: 1px solid #ddd;
-        padding: 10px;
-        width: 200px;
-    }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-        }
-</style>
 
 <div class="text-center">
-    <h1 class="display-4">All Available Rooms</h1>
+    <h1 class="display-6 title">Available Rooms</h1>
 </div>
+
 <div class="container">
     <div class="gallery">
-        @if (Model != null)
+        @if (Model.Item1 != null)
         {
-            @foreach (var room in Model)
+            @foreach (var room in Model.Item1)
             {
                 <div class="gallery-item">
-                    <img src=@room.ImageUrl />
+                    <img src=@room.ImageUrl alt="@room.Title" />
+                    <p />
                     <h5>@room.Title</h5>
-                    <p>@room.Description</p>
-                    <p>Price : @room.Price</p>
-                    <p>Capacity : @room.Capacity</p>
+                    <p><b>@room.Description</b></p>
+                    <p>Price : <b>@room.Price</b> per night</p>
+                    <p>Capacity : <b>@room.Capacity</b> people</p>
+
+                    @if (Model.Item2 != null)
+                    {
+                        @foreach (var booking in Model.Item2.Where(r => r.Room.Id == @room.Id))
+                        {
+                                <p>Bookings :
+                    @booking.StartDate - @booking.EndDate by @booking.Email</p>
+
+                        }
+                    }
+
                 </div>
             }
         }

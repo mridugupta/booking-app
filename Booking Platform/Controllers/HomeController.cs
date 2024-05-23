@@ -7,16 +7,33 @@ namespace Booking_Platform.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly Data.ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(Data.ApplicationDbContext context, ILogger<HomeController> logger)
     {
         _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> IndexWorking()
     {
-        return View();
+        var rooms = _context.Rooms.ToList();
+        var bookings = _context.Bookings.ToList();
+        var model = new Tuple<List<RoomDto>, List<BookingDto>>(rooms, bookings);
+        return View(model);
+    }
 
+    public async Task<IActionResult> Index()
+    {
+
+        var roomsController = new RoomsController(_context);
+        var bookingsController = new BookingsController(_context);
+
+        var rooms = await roomsController.GetRooms();
+        var bookings = await bookingsController.GetBookings();
+
+        var model = new Tuple<List<RoomDto>, List<BookingDto>>(rooms, bookings);
+        return View(model);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,22 @@
+﻿
+.title {
+    background: #258cfb;
+    padding: 5px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+}
+
+.gallery-item img {
+    width: 180px;
+    height: 180px;
+}

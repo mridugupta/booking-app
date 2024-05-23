@@ -11,15 +11,18 @@ namespace Booking_Platform.Models
         public int NumberOfPeople { get; set; }
         public RoomDto Room { get; set; }
 
-
-        public BookingDto(string email, DateTime startDate, DateTime endDate, int numberOfPeople)
+        public BookingDto()
         {
-            //RoomId = roomId;
+
+        }
+        public BookingDto(int roomId, string email, DateTime startDate, DateTime endDate, int numberOfPeople, RoomDto room)
+        {
+            RoomId = roomId;
             Email = email;
             StartDate = startDate;
             EndDate = endDate;
             NumberOfPeople = NumberOfPeople;
-            //Room = room;
+            Room = room;
         }
     }
 }
