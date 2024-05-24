@@ -7,15 +7,16 @@ namespace Booking_Platform.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BookingsController : ControllerBase
+    public class BookingsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<BookingsController> _logger;
 
-        public BookingsController(ApplicationDbContext context)
+        public BookingsController(ILogger<BookingsController> logger, ApplicationDbContext context)
         {
+            _logger = logger;
             _context = context;
         }
-
 
         [HttpPost("AddBooking")]
         [ValidateAntiForgeryToken]
@@ -24,15 +25,20 @@ namespace Booking_Platform.Controllers
         {
             try
             {
+                TempData["showMessage"] = "true";
                 var room = await _context.Rooms.FindAsync(roomId);
                 if (room == null)
                 {
-                    return RedirectToAction("Index", "Home", new { success = false, message = "Invalid booking request." });
+                    TempData["status"] = PredefinedMessages.Failure;
+                    TempData["message"] = PredefinedMessages.InvalidBookingRequest;
+                    return RedirectToAction("Index", "Home");
                 }
 
                 if (room.Capacity < numberOfPeople)
                 {
-                    return RedirectToAction("Index", "Home", new { success = false, message = "The room can host a maximum of " + room.Capacity + " individuals." });
+                    TempData["status"] = PredefinedMessages.Failure;
+                    TempData["message"] = string.Format(PredefinedMessages.RoomCapacityExceeded, room.Capacity);
+                    return RedirectToAction("Index", "Home");
                 }
 
                 var overlappingBookings = await _context.Bookings
@@ -43,7 +49,9 @@ namespace Booking_Platform.Controllers
 
                 if (overlappingBookings.Any())
                 {
-                    return RedirectToAction("Index", "Home", new { success = false, message = "The room is already booked for the selected dates." });
+                    TempData["status"] = PredefinedMessages.Failure;
+                    TempData["message"] = PredefinedMessages.RoomAlreadyBooked;
+                    return RedirectToAction("Index", "Home");
                 }
 
                 var booking = new BookingDto
@@ -58,11 +66,17 @@ namespace Booking_Platform.Controllers
                 _context.Bookings.Add(booking);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Home", new { success = true, message = "The room has been successfully booked." });
+                TempData["status"] = PredefinedMessages.Success;
+                TempData["message"] = PredefinedMessages.BookingSuccessful;
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Home", new { success = false, message = "Something went wrong. Please try again later." });
+                _logger.LogError(ex.Message);
+
+                TempData["status"] = PredefinedMessages.Failure;
+                TempData["message"] = PredefinedMessages.GeneralError;
+                return RedirectToAction("Index", "Home");
             }
         }
 

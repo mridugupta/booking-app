@@ -21,27 +21,6 @@ namespace Booking_Platform.Controllers
             return await _context.Rooms.ToListAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<RoomDto>> GetRoomById(int id)
-        {
-            var room = await _context.Rooms.FindAsync(id);
-
-            if (room == null)
-            {
-                return NotFound();
-            }
-
-            return room;
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<RoomDto>> PostRoom(RoomDto room)
-        {
-            _context.Rooms.Add(room);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetRoomById), new { id = room.Id }, room);
-        }
     }
 }
 

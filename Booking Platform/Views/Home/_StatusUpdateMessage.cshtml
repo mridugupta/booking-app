@@ -1,0 +1,18 @@
+﻿
+<div class="text-center">
+    @if (TempData["showMessage"] != null && TempData["showMessage"].ToString() == "true")
+    {
+        @if (TempData["status"].ToString() != "Success")
+        {
+            <h6 class="error-message">
+                @TempData["message"]
+            </h6>
+        }
+        else
+        {
+            <h6 class="success-message">
+                @TempData["message"]
+            </h6>
+        }
+    }
+</div>

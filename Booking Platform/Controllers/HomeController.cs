@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Booking_Platform.Models;
-using Azure.Core;
 
 namespace Booking_Platform.Controllers;
 
@@ -16,21 +15,13 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public async Task<IActionResult> Index(bool? success, string message)
+    public async Task<IActionResult> Index()
     {
         var roomsController = new RoomsController(_context);
         var rooms = await roomsController.GetRooms();
-        SetViewData(success, message);
 
         var model = new List<RoomDto>(rooms);
         return View(model);
-    }
-
-    private void SetViewData(bool? success, string message)
-    {
-        ViewData["ShowMessage"] = (success != null).ToString().ToLower();
-        ViewData["Status"] = success == true ? "Success" : "Error";
-        ViewData["Message"] = message;
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
