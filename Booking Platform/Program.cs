@@ -16,11 +16,6 @@ void SeedData(IServiceProvider serviceProvider)
         var room3 = new RoomDto("Room-3", "/images/room-3.jpeg", 402.22m, "Luxury Suite", "101 Maple Ave", 7);
         var room4 = new RoomDto("Room-4", "/images/room-4.jpeg", 300.57m, "Elegant Haven", "202 Pine Rd", 4);
 
-        room1.Id = 1;
-        room2.Id = 2;
-        room3.Id = 3;
-        room4.Id = 4;
-
         context.Rooms.AddRange(
         room1, room2, room3, room4);
 

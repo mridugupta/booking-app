@@ -1,12 +1,16 @@
-﻿@model Tuple<List<Booking_Platform.Models.RoomDto>, List<Booking_Platform.Models.BookingDto>>
+﻿@model List<Booking_Platform.Models.RoomDto>
 @{
     ViewData["Title"] = "Home";
 }
 
 <div class="container">
-    @await Html.PartialAsync("_Gallery", Model.Item1)
+    @await Html.PartialAsync("_Gallery", Model)
 </div>
 
 <div class="container">
-    @await Html.PartialAsync("_BookingForm", Model.Item1)
+    @await Html.PartialAsync("_BookingForm", Model)
+</div>
+
+<div class="container">
+    @await Html.PartialAsync("_Error")
 </div>

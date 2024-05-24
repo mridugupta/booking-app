@@ -12,8 +12,8 @@ namespace Booking_Platform.Models
 
         public BookingDto()
         {
-
         }
+
         public BookingDto (string email, DateTime startDate, DateTime endDate, int numberOfPeople, RoomDto room)
         {
             Email = email;

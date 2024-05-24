@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hyy829c6OppnV4XZMhh6G4wr7KjfSyhDk3ZJQ+lxYuU=",
+  "Hash": "8NadRmuQ+hAVtK9rugvLkjt5mT7idNU3n/birdAhPHs=",
   "Source": "Booking Platform",
   "BasePath": "_content/Booking Platform",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/mj/dev/booking-app/Booking Platform/wwwroot/css/status-update-message.css",
+      "SourceId": "Booking Platform",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mj/dev/booking-app/Booking Platform/wwwroot/",
+      "BasePath": "_content/Booking Platform",
+      "RelativePath": "css/status-update-message.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/status-update-message.css"
     },
     {
       "Identity": "/Users/mj/dev/booking-app/Booking Platform/wwwroot/favicon.ico",

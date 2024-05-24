@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/mj/dev/booking-app/Booking Platform/wwwroot/css/status-update-message.css",
+      "PackagePath": "staticwebassets/css/status-update-message.css"
+    },
+    {
       "Id": "/Users/mj/dev/booking-app/Booking Platform/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },

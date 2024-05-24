@@ -16,6 +16,7 @@ namespace Booking_Platform.Controllers
             _context = context;
         }
 
+
         [HttpPost("AddBooking")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddBooking([FromForm] int roomId, [FromForm] string email,
@@ -26,12 +27,12 @@ namespace Booking_Platform.Controllers
                 var room = await _context.Rooms.FindAsync(roomId);
                 if (room == null)
                 {
-                    return BadRequest("Invalid booking request.");
+                    return RedirectToAction("Index", "Home", new { success = false, message = "Invalid booking request." });
                 }
 
                 if (room.Capacity < numberOfPeople)
                 {
-                    return BadRequest("The room can host a maximum of $bookingRequest.NumberOfPeople individuals.");
+                    return RedirectToAction("Index", "Home", new { success = false, message = "The room can host a maximum of " + room.Capacity + " individuals." });
                 }
 
                 var overlappingBookings = await _context.Bookings
@@ -42,7 +43,7 @@ namespace Booking_Platform.Controllers
 
                 if (overlappingBookings.Any())
                 {
-                    return BadRequest("The room is already booked for the selected dates.");
+                    return RedirectToAction("Index", "Home", new { success = false, message = "The room is already booked for the selected dates." });
                 }
 
                 var booking = new BookingDto
@@ -56,24 +57,14 @@ namespace Booking_Platform.Controllers
 
                 _context.Bookings.Add(booking);
                 await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index", "Home", new { success = true, message = "The room has been successfully booked." });
             }
             catch (Exception ex)
             {
-                // Log error
-                //_logger.LogError($"An error occurred while processing the booking: {ex}");
-
-                // Handle the exception and return an appropriate response
-                return StatusCode(500, "An error occurred while processing the booking. Please try again later.");
+                return RedirectToAction("Index", "Home", new { success = false, message = "Something went wrong. Please try again later." });
             }
-
-            return RedirectToAction("Index", "Home");
         }
-/*
-        [HttpGet("{roomId}")]
-        public async Task<ActionResult<IList<BookingDto>>> GetBookingByRoomId(int roomId)
-        {
-            return await _context.Bookings.Where(r => r.Room.Id == roomId).ToListAsync();
-        }*/
 
         [HttpGet]
         public async Task<List<BookingDto>> GetBookings()
