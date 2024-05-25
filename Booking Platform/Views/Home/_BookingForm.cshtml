@@ -22,11 +22,11 @@
             </div>
             <div class="col-auto margin-10px">
                 <label class="sr-only" for="startDate">Start Date*</label>
-                <input type="date" class="form-control mb-2" id="startDate" name="startDate" required />
+                <input type="date" class="form-control mb-2" id="startDate" name="startDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required />
             </div>
             <div class="col-auto margin-10px">
                 <label class="sr-only" for="endDate">End Date*</label>
-                <input type="date" class="form-control mb-2" id="endDate" name="endDate" required />
+                <input type="date" class="form-control mb-2" id="endDate" name="endDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required />
             </div>
             <div class="col-auto margin-10px">
                 <label class="sr-only" for="numberOfPeople">Number of Guests*</label>
