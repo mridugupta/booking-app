@@ -22,4 +22,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Booking Platform\Booking Platform.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
 </Project>

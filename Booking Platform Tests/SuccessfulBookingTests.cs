@@ -23,6 +23,7 @@ public class SuccessfulBookingTests
     private int roomId = 0;
     private RoomDto room = new();
 
+    [SetUp]
     public void AddRooms()
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()
@@ -35,7 +36,6 @@ public class SuccessfulBookingTests
         var room2 = new RoomDto("Room-2", "/images/room-2.jpeg", 355.45m, "Cozy Retreat", "789 Oak St", 5);
 
         context.Rooms.AddRange(room1, room2);
-
         context.SaveChangesAsync();
 
         logger = new Mock<ILogger<BookingsController>>().Object;
@@ -59,7 +59,6 @@ public class SuccessfulBookingTests
     public async Task AddBooking_ValidInput_VerifyRedirectToActionResult()
     {
         //Act
-        AddRooms();
         var result = await bookingsController.AddBooking(roomId, email, startDate, endDate, capacity);
 
         //Assert
@@ -68,17 +67,13 @@ public class SuccessfulBookingTests
         Assert.That(redirectToActionResult.ActionName, Is.EqualTo("Index"));
         Assert.That(redirectToActionResult.ControllerName, Is.EqualTo("Home"));
 
-        context.Rooms.RemoveRange(context.Rooms);
-        context.Bookings.RemoveRange(context.Bookings);
-        await context.SaveChangesAsync();
-
+        Dispose();
     }
 
     [Test]
     public async Task AddBooking_ValidInput_VerifyBookingRecordDetails()
     {
         // Act
-        AddRooms();
         var result = await bookingsController.AddBooking(roomId, email, startDate, endDate, capacity);
 
         // Assert
@@ -98,9 +93,14 @@ public class SuccessfulBookingTests
         Assert.That(bookingsController.TempData["status"], Is.EqualTo(PredefinedMessages.Success));
         Assert.That(bookingsController.TempData["message"], Is.EqualTo(PredefinedMessages.BookingSuccessful));
 
+        Dispose();
+    }
+
+    private void Dispose()
+    {
         context.Rooms.RemoveRange(context.Rooms);
         context.Bookings.RemoveRange(context.Bookings);
-        await context.SaveChangesAsync();
+        context.SaveChangesAsync();
     }
 }
 
