@@ -12,6 +12,10 @@ namespace Booking_Platform.Models
         public string Address { get; set; }
         public int Capacity { get; set; }
 
+        public RoomDto()
+        {
+        }
+
         public RoomDto(string title, string imageUrl, decimal price, string description, string address, int capacity)
         {
             Id = new Random().Next(1, 100);

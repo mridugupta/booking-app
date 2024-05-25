@@ -10,9 +10,10 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "Moq": "4.20.70",
-          "coverlet.collector": "3.2.0",
-          "xunit": "2.8.0",
-          "xunit.runner.visualstudio": "2.4.5"
+          "NUnit": "3.13.3",
+          "NUnit.Analyzers": "3.6.1",
+          "NUnit3TestAdapter": "4.4.2",
+          "coverlet.collector": "3.2.0"
         },
         "runtime": {
           "Booking Platform Tests.dll": {}
@@ -626,6 +627,11 @@
           }
         }
       },
+      "NETStandard.Library/2.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -642,6 +648,19 @@
           }
         }
       },
+      "NUnit/3.13.3": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "assemblyVersion": "3.13.3.0",
+            "fileVersion": "3.13.3.0"
+          }
+        }
+      },
+      "NUnit.Analyzers/3.6.1": {},
+      "NUnit3TestAdapter/4.4.2": {},
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -818,59 +837,6 @@
           }
         }
       },
-      "xunit/2.8.0": {
-        "dependencies": {
-          "xunit.analyzers": "1.13.0",
-          "xunit.assert": "2.8.0",
-          "xunit.core": "2.8.0"
-        }
-      },
-      "xunit.abstractions/2.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/xunit.abstractions.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "xunit.analyzers/1.13.0": {},
-      "xunit.assert/2.8.0": {
-        "runtime": {
-          "lib/net6.0/xunit.assert.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
-          }
-        }
-      },
-      "xunit.core/2.8.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.8.0",
-          "xunit.extensibility.execution": "2.8.0"
-        }
-      },
-      "xunit.extensibility.core/2.8.0": {
-        "dependencies": {
-          "xunit.abstractions": "2.0.3"
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
-          }
-        }
-      },
-      "xunit.extensibility.execution/2.8.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.8.0"
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
-          }
-        }
-      },
-      "xunit.runner.visualstudio/2.4.5": {},
       "Booking Platform/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.19",
@@ -1169,6 +1135,13 @@
       "path": "moq/4.20.70",
       "hashPath": "moq.4.20.70.nupkg.sha512"
     },
+    "NETStandard.Library/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "path": "netstandard.library/2.0.0",
+      "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
+    },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1182,6 +1155,27 @@
       "sha512": "sha512-eaiXkUjC4NPcquGWzAGMXjuxvLwc6XGKMptSyOGQeT0X70BUZObuybJFZLA0OfTdueLd3US23NBPTBb6iF3V1Q==",
       "path": "nuget.frameworks/5.11.0",
       "hashPath": "nuget.frameworks.5.11.0.nupkg.sha512"
+    },
+    "NUnit/3.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KNPDpls6EfHwC3+nnA67fh5wpxeLb3VLFAfLxrug6JMYDLHH6InaQIWR7Sc3y75d/9IKzMksH/gi08W7XWbmnQ==",
+      "path": "nunit/3.13.3",
+      "hashPath": "nunit.3.13.3.nupkg.sha512"
+    },
+    "NUnit.Analyzers/3.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RKP9tpKfl3DmRgUDGgh3XM3XzeLMrCXXMZm6vm1nMsObZ6vtQL1L9NrK7+oZh1jWearvNsbMis2+AIOY3NFmow==",
+      "path": "nunit.analyzers/3.6.1",
+      "hashPath": "nunit.analyzers.3.6.1.nupkg.sha512"
+    },
+    "NUnit3TestAdapter/4.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vA/iHYcR+LYw+pRWQugckC/zW2fXHaqMr2uA82NOBt8v4YK4wMJrQ7QC8XLc7PjetEZ96cPbBTWsDDtmQiRZTA==",
+      "path": "nunit3testadapter/4.4.2",
+      "hashPath": "nunit3testadapter.4.4.2.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",
@@ -1357,62 +1351,6 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
-    },
-    "xunit/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-US3a3twJziAif1kFPGdk9fALwILHxV0n1roX5j67bN/d3o4DGNLHnV3tr5ZX+uinVrzfkf0avH3zGX8JPBC0qA==",
-      "path": "xunit/2.8.0",
-      "hashPath": "xunit.2.8.0.nupkg.sha512"
-    },
-    "xunit.abstractions/2.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
-      "path": "xunit.abstractions/2.0.3",
-      "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
-    },
-    "xunit.analyzers/1.13.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Pai9YnDV71/Ox14nBHB6/f62iyPyLbmUG/YYMiA4dfdFZvr0gIYE9yGxSr0i5Tr3INK75wgL2MCUNEKpeiZ2Fw==",
-      "path": "xunit.analyzers/1.13.0",
-      "hashPath": "xunit.analyzers.1.13.0.nupkg.sha512"
-    },
-    "xunit.assert/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-lwf7Dy5/5HbDkaPx1YrGXCByytCEEcIn+KPI74jh2BD/RU/7RhO8c+S3k0Ph+Mr7+cLf338fl+o6UcgPCLa6PA==",
-      "path": "xunit.assert/2.8.0",
-      "hashPath": "xunit.assert.2.8.0.nupkg.sha512"
-    },
-    "xunit.core/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-McSTFGTETCxLpmJKE9TWi9FtFthrRbpRrjz2V2g8sK2wRt1+JHs15vwi+B+nfftFkV9aFWIXZfzZM95TIGZNIA==",
-      "path": "xunit.core/2.8.0",
-      "hashPath": "xunit.core.2.8.0.nupkg.sha512"
-    },
-    "xunit.extensibility.core/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eBJv9xQeY0p5z+C/L1tFjUFYqtl5pQqIEYCGTMl+MbRzA7sOlgYKwJE//vEePBp+mgBh7NjD0Qhz0liZBYM27w==",
-      "path": "xunit.extensibility.core/2.8.0",
-      "hashPath": "xunit.extensibility.core.2.8.0.nupkg.sha512"
-    },
-    "xunit.extensibility.execution/2.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-TyyrZesHB9ODZMS9c73OqiBz4x0vL944JCkSPBWW5w6PF2LlUfdfXRjjOhoIOuY6lTmEgl07rS4/Jot9mCYnpg==",
-      "path": "xunit.extensibility.execution/2.8.0",
-      "hashPath": "xunit.extensibility.execution.2.8.0.nupkg.sha512"
-    },
-    "xunit.runner.visualstudio/2.4.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
-      "path": "xunit.runner.visualstudio/2.4.5",
-      "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
     },
     "Booking Platform/1.0.0": {
       "type": "project",
