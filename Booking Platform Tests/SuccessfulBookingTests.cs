@@ -11,7 +11,7 @@ using NUnit.Framework.Internal;
 
 namespace Booking_Platform_Tests;
 
-public class SuccessfulBookingTest
+public class SuccessfulBookingTests
 {
     private ApplicationDbContext context;
     private BookingsController bookingsController;
@@ -21,9 +21,8 @@ public class SuccessfulBookingTest
     private readonly DateTime endDate = DateTime.Now.AddDays(2);
     private readonly int capacity = 2;
     private int roomId = 0;
-    private RoomDto room = new RoomDto();
+    private RoomDto room = new();
 
-    [SetUp]
     public void AddRooms()
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()
@@ -60,6 +59,7 @@ public class SuccessfulBookingTest
     public async Task AddBooking_ValidInput_VerifyRedirectToActionResult()
     {
         //Act
+        AddRooms();
         var result = await bookingsController.AddBooking(roomId, email, startDate, endDate, capacity);
 
         //Assert
@@ -67,30 +67,40 @@ public class SuccessfulBookingTest
         Assert.IsNotNull(redirectToActionResult);
         Assert.That(redirectToActionResult.ActionName, Is.EqualTo("Index"));
         Assert.That(redirectToActionResult.ControllerName, Is.EqualTo("Home"));
+
+        context.Rooms.RemoveRange(context.Rooms);
+        context.Bookings.RemoveRange(context.Bookings);
+        await context.SaveChangesAsync();
+
     }
 
     [Test]
     public async Task AddBooking_ValidInput_VerifyBookingRecordDetails()
     {
         // Act
+        AddRooms();
         var result = await bookingsController.AddBooking(roomId, email, startDate, endDate, capacity);
 
         // Assert
         var bookings = context.Bookings;
         Assert.IsNotNull(bookings);
         // Verify only one record is added
-        Assert.AreEqual(bookings.Count(), 1);
+        Assert.That(bookings.Count(), Is.EqualTo(1));
 
         // Verify booking record matches with the input provided
         var booking = bookings.FirstOrDefault();
-        Assert.That(booking.Email, Is.EqualTo(email));
-        Assert.That(booking.StartDate.Date, Is.EqualTo(startDate.Date));
-        Assert.That(booking.EndDate.Date, Is.EqualTo(endDate.Date));
-        Assert.That(booking.NumberOfPeople, Is.EqualTo(2));
-        Assert.That(booking.Room, Is.EqualTo(room));
+        Assert.That(booking?.Email, Is.EqualTo(email));
+        Assert.That(booking?.StartDate.Date, Is.EqualTo(startDate.Date));
+        Assert.That(booking?.EndDate.Date, Is.EqualTo(endDate.Date));
+        Assert.That(booking?.NumberOfPeople, Is.EqualTo(2));
+        Assert.That(booking?.Room, Is.EqualTo(room));
 
         Assert.That(bookingsController.TempData["status"], Is.EqualTo(PredefinedMessages.Success));
         Assert.That(bookingsController.TempData["message"], Is.EqualTo(PredefinedMessages.BookingSuccessful));
+
+        context.Rooms.RemoveRange(context.Rooms);
+        context.Bookings.RemoveRange(context.Bookings);
+        await context.SaveChangesAsync();
     }
 }
 

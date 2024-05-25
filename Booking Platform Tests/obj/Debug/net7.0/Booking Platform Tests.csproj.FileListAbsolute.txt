@@ -5,18 +5,10 @@
 /Users/mj/Projects/Booking Platform/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfo.cs
 /Users/mj/Projects/Booking Platform/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CoreCompileInputs.cache
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.AssemblyReference.cache
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfoInputs.cache
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfo.cs
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CoreCompileInputs.cache
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.dll
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/refint/Booking Platform Tests.dll
-/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.pdb
-/Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/appsettings.Development.json
-/Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/appsettings.json
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform.deps.json
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform.runtimeconfig.json
+/Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/appsettings.Development.json
+/Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/appsettings.json
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform.staticwebassets.runtime.json
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/NUnit3.TestAdapter.dll
@@ -149,6 +141,14 @@
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform.dll
 /Users/mj/dev/booking-app/Booking Platform Tests/bin/Debug/net7.0/Booking Platform.pdb
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.AssemblyReference.cache
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfoInputs.cache
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.AssemblyInfo.cs
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CoreCompileInputs.cache
 /Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.csproj.CopyComplete
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.dll
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/refint/Booking Platform Tests.dll
+/Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.pdb
 /Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/Booking Platform Tests.genruntimeconfig.cache
 /Users/mj/dev/booking-app/Booking Platform Tests/obj/Debug/net7.0/ref/Booking Platform Tests.dll

@@ -3,7 +3,7 @@ using Booking_Platform.Models;
 
 namespace Booking_Platform.Data
 {
-	public class ApplicationDbContext : DbContext
+	public class ApplicationDbContext : DbContext, IDisposable
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
